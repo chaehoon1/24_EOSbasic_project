@@ -27,36 +27,49 @@ class MyHomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: Text('EOS todolist'),
-        leading: Icon(Icons.insert_emoticon_sharp),
+        backgroundColor: Colors.lightGreen,
+        title: Text('EOS ToDoList'),
+        leading: Icon(Icons.check_box_outlined),
       ),
-      body: Row(
-        mainAxisAlignment: MainAxisAlignment.end,
-        //crossAxisAlignment: CrossAxisAlignment.,
-        children: [
-          Container(
-            decoration: BoxDecoration(
-              border: Border.all(width: 5), color: Colors.black
+      body: Container(
+        color: Colors.lightGreen.withOpacity(0.3),
+        height: 200,
+        padding: EdgeInsets.all(25),
+        child: Row(
+          children: [
+            Container(
+              height: 150,
+              width: 150,
+              decoration: BoxDecoration(
+                color: Colors.white,
+                border: Border.all(width: 10, color: Colors.grey)
+              ),
+              child: Center(
+                child: Icon(Icons.person, size: 100, color: Colors.grey)
+              )
             ),
-            //color: Colors.red,
-            width: 150,
-            height: 150,
-          ),
-          Container(
-            color: Colors.blue,
-            width: 150,
-            height: 150,
-          ),
-          Container(
-            color: Colors.amber,
-            width: 150,
-            height: 150,
-          ),
-        ],
-      ),
-      bottomNavigationBar: BottomAppBar(
-        child: Text('Hello World'),
+            SizedBox(
+              width: 10,
+            ),
+            Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text('EOS'),
+                Text(
+                  'Shin Chae Hoon',
+                style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 30,
+                    fontWeight: FontWeight.bold,
+                ),
+                ),
+                Text('Hello Flutter!'),
+              ],
+
+            ),
+          ]
+        )
       ),
     );
   }
